@@ -1,3 +1,5 @@
+#ne fonctionne pas !!!
+
 import random
 liste = []
 
