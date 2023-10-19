@@ -1,7 +1,9 @@
 #1
+
 myTable =[2,5,1,3,4]
 
 print(myTable)
+
 def switch(tableau,index1,index2):
     save = tableau[index1]
     tableau[index1] = tableau[index2]
@@ -40,6 +42,7 @@ print("\n")
 
 #upgrade
 #1
+
 myTable = [2,0,4,1,5,3]
 
 print(myTable)
