@@ -35,7 +35,7 @@ print(myTable)
 for i in range(len(myTable)-1):
     for j in range(len(myTable)-1):
         if(myTable[j]>myTable[j+1]):
-            switch(myTable,j,(j+1))
+            cswitch(myTable,j,(j+1))
 
 print(myTable)
 print("\n")
