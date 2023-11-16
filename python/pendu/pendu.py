@@ -10,29 +10,40 @@ def check(mot,lettre):
             listemot[i] = choix
     
 def failcheck(mot,lettre):
-    if(lettre not in liste_lettres):
+    if ( lettre in liste_lettres):
+        print("deja essayer")
+        return +1
+    else:
         liste_lettres.append(lettre)
     
+    if(lettre in mot):
+        return 0
     elif (lettre not in mot):
         print("Reessayez")
         return +1
     
-    if ( lettre in liste_lettres):
-        print("deja essayer")
-        return +1
-    
-    
-    
-    
-   
-
-
-
+def pendu(nmb):
+    for i in range (nmb):
+        if(i == 0):
+            print("+-------+")
+        if(i == 1):
+            print("|       |")
+        if(i == 2):
+            print("|       O")
+        if(i == 3):
+            print("|       |")
+        if(i == 4):
+            print("|        ")
+        if(i == 5):
+            print("|        ")
+        if(i == 6):
+            print("|        ")
+        if(i == 7):
+            print("=========")
 
 
 for i in range(len(mot1)):
     listemot.append("*")
-
 for i in range(len(listemot)):
     motfinal += listemot[i]
 
@@ -40,7 +51,7 @@ for i in range(len(listemot)):
 while(True):
 
     print(motfinal)
-    print(erreurs)
+    pendu(erreurs)
     print("lettres essayées :",liste_lettres)
     choix = input("saississez un caractère: ")
     
@@ -57,6 +68,7 @@ while(True):
 
     if(erreurs == 8):
         print("LOSE")
+        pendu(erreurs)
         break
 
 
