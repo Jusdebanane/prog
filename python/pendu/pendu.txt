@@ -1,1 +1,1 @@
-pain, piano, hopital, voiture
+pain,piano,hopital,voiture

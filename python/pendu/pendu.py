@@ -1,10 +1,11 @@
 import random
+import colorama
 
 dico = []
 fichier = open("pendu.txt")
 dico = fichier.read().split(",")
 
-print(dico)
+print(colorama.Fore.RED+"Zut")
 
 def check(mot,lettre):
     for i in range(len(mot)):
@@ -44,7 +45,6 @@ def affiche_pendu(nmb):
             print("=========")
 
 
-
 mot1 = ""
 liste_mot = []
 motfinal =""
@@ -53,6 +53,7 @@ erreurs = 0
 
 
 mot1 = dico[random.randint(0,len(dico)-1)]
+
 
 for i in range(len(mot1)):
     liste_mot.append("*")
@@ -79,6 +80,7 @@ while(True):
 
     if("*" not in motfinal):
         print("VOUS AVEZ GAGNE")
+        print("Mot:",mot1)
         break
     if(erreurs == 8):
         print("LOSE")
