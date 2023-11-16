@@ -1,5 +1,10 @@
 import random
 
+dico = []
+fichier = open("pendu.txt")
+dico = fichier.read().split(",")
+
+print(dico)
 
 def check(mot,lettre):
     for i in range(len(mot)):
@@ -19,7 +24,7 @@ def failcheck(mot,lettre):
         print("Reessayez")
         return +1
     
-def pendu(nmb):
+def affiche_pendu(nmb):
     for i in range (nmb):
         if(i == 0):
             print("+-------+")
@@ -39,7 +44,7 @@ def pendu(nmb):
             print("=========")
 
 
-dico = ["bonjour","bonsoir","oui"]
+
 mot1 = ""
 liste_mot = []
 motfinal =""
@@ -48,6 +53,7 @@ erreurs = 0
 
 
 mot1 = dico[random.randint(0,len(dico)-1)]
+
 for i in range(len(mot1)):
     liste_mot.append("*")
 for i in range(len(liste_mot)):
@@ -57,7 +63,7 @@ for i in range(len(liste_mot)):
 while(True):
 
     print(motfinal)
-    pendu(erreurs)
+    affiche_pendu(erreurs)
     print("lettres essayées :",liste_lettres)
 
 
@@ -76,5 +82,5 @@ while(True):
         break
     if(erreurs == 8):
         print("LOSE")
-        pendu(erreurs)
+        affiche_pendu(erreurs)
         break
