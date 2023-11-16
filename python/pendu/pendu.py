@@ -1,13 +1,10 @@
-mot1 = "bonjour"
-listemot = []
-motfinal ="bonjour"
-liste_lettres= []
-erreurs = 0
+import random
+
 
 def check(mot,lettre):
     for i in range(len(mot)):
         if(lettre == mot[i]):
-            listemot[i] = choix
+            liste_mot[i] = choix
     
 def failcheck(mot,lettre):
     if ( lettre in liste_lettres):
@@ -42,10 +39,19 @@ def pendu(nmb):
             print("=========")
 
 
+dico = ["bonjour","bonsoir","oui"]
+mot1 = ""
+liste_mot = []
+motfinal =""
+liste_lettres= []
+erreurs = 0
+
+
+mot1 = dico[random.randint(0,len(dico)-1)]
 for i in range(len(mot1)):
-    listemot.append("*")
-for i in range(len(listemot)):
-    motfinal += listemot[i]
+    liste_mot.append("*")
+for i in range(len(liste_mot)):
+    motfinal += liste_mot[i]
 
 
 while(True):
@@ -53,22 +59,22 @@ while(True):
     print(motfinal)
     pendu(erreurs)
     print("lettres essayées :",liste_lettres)
+
+
     choix = input("saississez un caractère: ")
-    
     check(mot1,choix)
     erreurs += failcheck(mot1,choix)
 
+
     motfinal = " "   
-    for i in range(len(listemot)):
-        motfinal += listemot[i]
+    for i in range(len(liste_mot)):
+        motfinal += liste_mot[i]
     
+
     if("*" not in motfinal):
         print("VOUS AVEZ GAGNE")
         break
-
     if(erreurs == 8):
         print("LOSE")
         pendu(erreurs)
         break
-
-
