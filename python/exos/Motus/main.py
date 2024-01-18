@@ -5,7 +5,7 @@ colorama.init(autoreset=True)
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
-mot = 'YOUTUBE'
+mot = 'SALUT'
 guess_list =[]
 
 victoire = False
